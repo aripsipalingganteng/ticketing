@@ -4,7 +4,9 @@ import 'package:ticketing/core/components/button.dart';
 import 'package:ticketing/core/components/custom_text_field.dart';
 import 'package:ticketing/core/components/space.dart';
 import 'package:ticketing/core/constants/color.dart';
+import 'package:ticketing/core/extensions/build_context_ext.dart';
 import 'package:ticketing/gen/assets/assets.gen.dart';
+import 'package:ticketing/ui/home/main_screen.dart';
 
 
 class LoginScreen extends StatelessWidget {
@@ -58,7 +60,10 @@ class LoginScreen extends StatelessWidget {
                           obscureText: true,
                         ),
                         SpaceHeight(86),
-                        Button.filled(onPressed: () {}, label: 'login'),
+                        Button.filled(
+                          onPressed: () {
+                            context.pushReplacement(MainScreen());
+                          }, label: 'login'),
                         SpaceHeight(120),
                         Center(child: Assets.images.logo.image(height: 40),),
                       ],
