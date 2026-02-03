@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:ticketing/core/constants/color.dart';
 import 'package:ticketing/ui/auth/splash_screen.dart';
 
 void main() {
@@ -29,10 +31,24 @@ class MyApp extends StatelessWidget {
         //
         // This works for code too, not just values: Most code changes can be
         // tested with just a hot reload.
-        colorScheme: .fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: .fromSeed(seedColor: AppColors.primary),
+        dialogTheme: DialogThemeData(elevation: 0),
+        textTheme: GoogleFonts.plusJakartaSansTextTheme(
+          Theme.of(context).textTheme,
+        ),
+        appBarTheme: AppBarTheme(
+          color: Colors.white,
+          elevation: 0,
+          titleTextStyle: GoogleFonts.plusJakartaSans(
+            color: AppColors.primary,
+            fontSize: 18,
+            fontWeight: FontWeight.w500,
+          ),
+          iconTheme: IconThemeData(color: AppColors.black),
+          centerTitle: true,
+        ),
       ),
-      home: SplashScreen()
+      home: SplashScreen(),
     );
   }
 }
-
