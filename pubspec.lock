@@ -239,7 +239,7 @@ packages:
     source: hosted
     version: "5.12.0"
   flutter_gen_runner:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: flutter_gen_runner
       sha256: c99b10af9d404e3f46fd1927e7d90099779e935e86022674c4c2a9e6c2a93b29

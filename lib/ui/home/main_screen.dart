@@ -10,6 +10,7 @@ import 'package:ticketing/ui/home/qr_screen.dart';
 import 'package:ticketing/ui/home/setting_screen.dart';
 import 'package:ticketing/ui/home/ticket_screen.dart';
 
+
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
 
@@ -18,20 +19,20 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-
   int _selectedIndex = 0;
   final _pages = [
     OrderScreen(),
     TicketScreen(),
     HistoryScreen(),
-    SettingScreen()
+    SettingScreen(),
   ];
 
-  void _onItemTapped(int index){
+  void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,17 +40,18 @@ class _MainScreenState extends State<MainScreen> {
       bottomNavigationBar: Container(
         padding: EdgeInsets.all(20),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.vertical(top: Radius.circular(28)),
+          borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
           color: Colors.white,
           boxShadow: [
             BoxShadow(
               offset: Offset(0, -2),
-              blurStyle: BlurStyle.outer,
+              blurRadius: 30,
               spreadRadius: 0,
-              color: AppColors.black.withOpacity(0.08)
-            )
-          ]
+              color: AppColors.black.withOpacity(0.08),
+            ),
+          ],
         ),
+
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
@@ -57,7 +59,7 @@ class _MainScreenState extends State<MainScreen> {
               iconPath: Assets.icons.nav.home.path,
               label: 'Home',
               isActive: _selectedIndex == 0,
-              onTap: () => _onItemTapped(0),
+              onTap: () => _onItemTapped,
             ),
             NavItem(
               iconPath: Assets.icons.nav.ticket.path,
@@ -65,7 +67,7 @@ class _MainScreenState extends State<MainScreen> {
               isActive: _selectedIndex == 1,
               onTap: () => _onItemTapped(1),
             ),
-            SpaceWidth(10),
+            SpaceHeight(10),
             NavItem(
               iconPath: Assets.icons.nav.history.path,
               label: 'History',
@@ -81,6 +83,7 @@ class _MainScreenState extends State<MainScreen> {
           ],
         ),
       ),
+
       floatingActionButton: GestureDetector(
         onTap: () => context.push(QrScreen()),
         child: Container(
@@ -89,9 +92,11 @@ class _MainScreenState extends State<MainScreen> {
             shape: BoxShape.circle,
             color: AppColors.primary,
           ),
+
           child: Assets.icons.nav.scan.svg(),
         ),
       ),
+
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
