@@ -7,7 +7,7 @@ import 'package:ticketing/core/extensions/idr_currency.dart';
 import 'package:ticketing/ui/home/payment_sucses_screen.dart';
 
 class PaymentTunaiDialog extends StatefulWidget {
-  int totalPrice;
+  final int totalPrice;
   PaymentTunaiDialog({super.key, required this.totalPrice});
 
   @override
@@ -54,7 +54,7 @@ class _PaymentTunaiDialogState extends State<PaymentTunaiDialog> {
                   },
                   textColor: nominalIndex == 0 ? AppColors.white : AppColors.grey,
                   color: nominalIndex == 0 ? AppColors.primary : Colors.transparent,
-                  label: 'uang pas',
+                  label: 'Uang Pas',
                   borderRadius: 10,
                   fontSize: 14,
                 ),
