@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:qr_flutter/qr_flutter.dart';
-import 'package:ticketing/core/components/space.dart';
-import 'package:ticketing/core/constants/color.dart';
-import 'package:ticketing/core/extensions/build_context_ext.dart';
-import 'package:ticketing/ui/home/payment_sucses_screen.dart';
+import 'package:ticketing_apps/core/components/space.dart';
+import 'package:ticketing_apps/core/constants/color.dart';
+import 'package:ticketing_apps/core/extensions/build_context_ext.dart';
+import 'package:ticketing_apps/ui/home/payment_sucses_screen.dart';
 import 'package:timer_count_down/timer_count_down.dart';
 
 class PaymentQrisDialog extends StatelessWidget {
@@ -23,19 +23,19 @@ class PaymentQrisDialog extends StatelessWidget {
               width: 200,
               height: 200,
               child: QrImageView(
-                data: 'data',
+                data: 'hidup jokowi!',
                 version: QrVersions.auto,
+                size: 100,
               ),
             ),
           ),
-
           SpaceHeight(24),
           Countdown(
             seconds: 60,
             build: (context, time) {
               return Text.rich(
                 TextSpan(
-                  text: 'Update After',
+                  text: 'Update after ',
                   children: [
                     TextSpan(
                       text: '${time.toInt()}s',
@@ -48,7 +48,7 @@ class PaymentQrisDialog extends StatelessWidget {
                 ),
               );
             },
-            onFinished: () {},                     
+            onFinished: () {},
           ),
         ],
       ),

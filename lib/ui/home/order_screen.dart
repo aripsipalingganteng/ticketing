@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:ticketing/core/components/button.dart';
-import 'package:ticketing/core/components/space.dart';
-import 'package:ticketing/core/constants/color.dart';
-import 'package:ticketing/core/extensions/build_context_ext.dart';
-import 'package:ticketing/core/extensions/idr_currency.dart';
-import 'package:ticketing/gen/assets/assets.gen.dart';
-import 'package:ticketing/ui/home/model/product_model.dart';
-import 'package:ticketing/ui/home/order_detail_screen.dart';
+import 'package:ticketing_apps/core/assets/assets.gen.dart';
+import 'package:ticketing_apps/core/components/button.dart';
+import 'package:ticketing_apps/core/components/space.dart';
+import 'package:ticketing_apps/core/constants/color.dart';
+import 'package:ticketing_apps/core/extensions/build_context_ext.dart';
+import 'package:ticketing_apps/core/extensions/idr_currency.dart';
+import 'package:ticketing_apps/ui/home/model/product_model.dart';
+import 'package:ticketing_apps/ui/home/order_detail_screen.dart';
 
 class OrderScreen extends StatelessWidget {
   const OrderScreen({super.key});

@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:ticketing/core/components/space.dart';
-import 'package:ticketing/core/constants/color.dart';
-
+import 'package:ticketing_apps/core/components/space.dart';
+import 'package:ticketing_apps/core/constants/color.dart';
 
 class PaymentMethodButton extends StatelessWidget {
   final String iconPath;
@@ -33,10 +32,9 @@ class PaymentMethodButton extends StatelessWidget {
           children: [
             SvgPicture.asset(
               iconPath,
-              colorFilter:
-                  isActive
-                      ? ColorFilter.mode(AppColors.white, BlendMode.srcIn)
-                      : null,
+              colorFilter: isActive
+                  ? ColorFilter.mode(AppColors.white, BlendMode.srcIn)
+                  : null,
             ),
             SpaceHeight(10),
             Text(

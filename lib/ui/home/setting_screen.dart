@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:ticketing/core/components/space.dart';
-import 'package:ticketing/core/constants/color.dart';
-import 'package:ticketing/gen/assets/assets.gen.dart';
-import 'package:ticketing/ui/dialog/logout_ticket_dialog.dart';
-import 'package:ticketing/ui/dialog/sync_data_dialog.dart';
+import 'package:ticketing_apps/core/assets/assets.gen.dart';
+import 'package:ticketing_apps/core/components/space.dart';
+import 'package:ticketing_apps/core/constants/color.dart';
+import 'package:ticketing_apps/ui/dialog/logout_ticket_dialog.dart';
+import 'package:ticketing_apps/ui/dialog/sync_data_dialog.dart';
 
 class SettingScreen extends StatelessWidget {
   const SettingScreen({super.key});

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:ticketing/core/components/space.dart';
-import 'package:ticketing/core/constants/color.dart';
+import 'package:ticketing_apps/core/components/space.dart';
+import 'package:ticketing_apps/core/constants/color.dart';
 
 class SyncDataDialog extends StatefulWidget {
   const SyncDataDialog({super.key});
@@ -18,7 +18,7 @@ class _SyncDataDialogState extends State<SyncDataDialog> {
         mainAxisSize: MainAxisSize.min,
         children: [
           SpaceHeight(40),
-          SpinKitCubeGrid(color: AppColors.primary, size: 80),
+          SpinKitPouringHourGlassRefined(color: AppColors.primary, size: 80),
           SpaceHeight(16),
           Text(
             'Sync Data',

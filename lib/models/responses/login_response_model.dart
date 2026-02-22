@@ -1,12 +1,12 @@
 import 'dart:convert';
 
 class LoginResponseModel {
-    String token;
-    User user;
+    String? token;
+    User? user;
 
     LoginResponseModel({
-        required this.token,
-        required this.user,
+        this.token,
+        this.user,
     });
 
     factory LoginResponseModel.fromJson(String str) => LoginResponseModel.fromMap(json.decode(str));
@@ -15,34 +15,34 @@ class LoginResponseModel {
 
     factory LoginResponseModel.fromMap(Map<String, dynamic> json) => LoginResponseModel(
         token: json["token"],
-        user: User.fromMap(json["user"]),
+        user: json["user"] == null ? null : User.fromMap(json["user"]),
     );
 
     Map<String, dynamic> toMap() => {
         "token": token,
-        "user": user.toMap(),
+        "user": user?.toMap(),
     };
 }
 
 class User {
-    int id;
-    String name;
-    String email;
+    int? id;
+    String? name;
+    String? email;
     dynamic phone;
-    String role;
-    DateTime emailVerifiedAt;
-    DateTime createdAt;
-    DateTime updatedAt;
+    String? role;
+    DateTime? emailVerifiedAt;
+    DateTime? createdAt;
+    DateTime? updatedAt;
 
     User({
-        required this.id,
-        required this.name,
-        required this.email,
-        required this.phone,
-        required this.role,
-        required this.emailVerifiedAt,
-        required this.createdAt,
-        required this.updatedAt,
+        this.id,
+        this.name,
+        this.email,
+        this.phone,
+        this.role,
+        this.emailVerifiedAt,
+        this.createdAt,
+        this.updatedAt,
     });
 
     factory User.fromJson(String str) => User.fromMap(json.decode(str));
@@ -55,9 +55,9 @@ class User {
         email: json["email"],
         phone: json["phone"],
         role: json["role"],
-        emailVerifiedAt: DateTime.parse(json["email_verified_at"]),
-        createdAt: DateTime.parse(json["created_at"]),
-        updatedAt: DateTime.parse(json["updated_at"]),
+        emailVerifiedAt: json["email_verified_at"] == null ? null : DateTime.parse(json["email_verified_at"]),
+        createdAt: json["created_at"] == null ? null : DateTime.parse(json["created_at"]),
+        updatedAt: json["updated_at"] == null ? null : DateTime.parse(json["updated_at"]),
     );
 
     Map<String, dynamic> toMap() => {
@@ -66,8 +66,8 @@ class User {
         "email": email,
         "phone": phone,
         "role": role,
-        "email_verified_at": emailVerifiedAt.toIso8601String(),
-        "created_at": createdAt.toIso8601String(),
-        "updated_at": updatedAt.toIso8601String(),
+        "email_verified_at": emailVerifiedAt?.toIso8601String(),
+        "created_at": createdAt?.toIso8601String(),
+        "updated_at": updatedAt?.toIso8601String(),
     };
 }

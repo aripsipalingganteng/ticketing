@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:ticketing/core/components/space.dart';
-import 'package:ticketing/core/constants/color.dart';
-
+import 'package:ticketing_apps/core/components/space.dart';
+import 'package:ticketing_apps/core/constants/color.dart';
 
 class NavItem extends StatelessWidget {
   final String iconPath;
@@ -42,7 +41,7 @@ class NavItem extends StatelessWidget {
             label,
             style: TextStyle(
               fontSize: 12,
-              color: isActive ? AppColors.primary : AppColors.navInActive,
+
             ),
           ),
         ],

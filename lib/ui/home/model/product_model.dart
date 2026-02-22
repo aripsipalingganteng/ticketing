@@ -3,7 +3,6 @@ class ProductModel {
   final String type;
   final int price;
   int quantity;
-
   ProductModel({
     required this.productName,
     required this.type,
@@ -13,51 +12,52 @@ class ProductModel {
 }
 
 final dummyProducts = [
-  ProductModel(productName: 'Ticketing Dewasa', type: 'Domesti', price: 100000),
+  ProductModel(productName: 'Ticket Dewasa', type: 'Domestik', price: 15000),
   ProductModel(
-    productName: 'Ticketing Anak Kecil',
-    type: 'Domesti',
+    productName: 'Ticket Anak Kecil',
+    type: 'Domestik',
+    price: 10000,
+  ),
+  ProductModel(
+    productName: 'Ticket Dewasa',
+    type: 'Manca Negara',
+    price: 150000,
+  ),
+  ProductModel(
+    productName: 'Ticket Anak Kecil',
+    type: 'Manca Negara',
     price: 100000,
   ),
+  ProductModel(productName: 'Ticket Dewasa', type: 'Domestik', price: 15000),
   ProductModel(
-    productName: 'Ticketing Dewasa',
-    type: 'Internasional',
+    productName: 'Ticket Anak Kecil',
+    type: 'Domestik',
+    price: 10000,
+  ),
+  ProductModel(
+    productName: 'Ticket Dewasa',
+    type: 'Manca Negara',
     price: 150000,
   ),
   ProductModel(
-    productName: 'Ticketing Anak Kecil',
-    type: 'Internasional',
+    productName: 'Ticket Anak Kecil',
+    type: 'Manca Negara',
+    price: 100000,
+  ),
+  ProductModel(productName: 'Ticket Dewasa', type: 'Domestik', price: 15000),
+  ProductModel(
+    productName: 'Ticket Anak Kecil',
+    type: 'Domestik',
+    price: 10000,
+  ),
+  ProductModel(
+    productName: 'Ticket Dewasa',
+    type: 'Manca Negara',
     price: 150000,
   ),
   ProductModel(
-    productName: 'Ticketing Dewasa',
+    productName: 'Ticket Anak Kecil',
     type: 'Manca Negara',
-    price: 200000,
-  ),
-  ProductModel(
-    productName: 'Ticketing Anak Kecil',
-    type: 'Manca Negara',
-    price: 200000,
-  ),
-  ProductModel(
-    productName: 'Ticketing Dewasa',
-    type: 'Manca Negara',
-    price: 200000,
-    
-  ),
-  ProductModel(
-    productName: 'Ticketing Anak Kecil',
-    type: 'Manca Negara',
-    price: 200000,
-  ),
-  ProductModel(
-    productName: 'Ticketing Dewasa',
-    type: 'Manca Negara',
-    price: 200000,
-  ),
-  ProductModel(
-    productName: 'Ticketing Anak Kecil',
-    type: 'Manca Negara',
-    price: 200000,
+    price: 100000,
   ),
 ];

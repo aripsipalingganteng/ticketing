@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:qr_flutter/qr_flutter.dart';
-import 'package:ticketing/core/components/button.dart';
-import 'package:ticketing/core/components/space.dart';
-import 'package:ticketing/core/constants/color.dart';
-import 'package:ticketing/core/extensions/build_context_ext.dart';
-import 'package:ticketing/gen/assets/assets.gen.dart';
+import 'package:ticketing_apps/core/assets/assets.gen.dart';
+import 'package:ticketing_apps/core/components/button.dart';
+import 'package:ticketing_apps/core/components/space.dart';
+import 'package:ticketing_apps/core/constants/color.dart';
+import 'package:ticketing_apps/core/extensions/build_context_ext.dart';
 
 
 class PaymentSuccessScreen extends StatelessWidget {

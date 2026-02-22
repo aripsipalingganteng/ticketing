@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:ticketing/core/constants/color.dart';
-import 'package:ticketing/ui/auth/splash_screen.dart';
+import 'package:ticketing_apps/core/constants/color.dart';
+import 'package:ticketing_apps/data/remote_datasource/auth_remote_datasource.dart';
+import 'package:ticketing_apps/ui/auth/bloc/auth_bloc.dart';
+import 'package:ticketing_apps/ui/auth/splash_screen.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -13,42 +17,30 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a purple toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
-        colorScheme: .fromSeed(seedColor: AppColors.primary),
-        dialogTheme: DialogThemeData(elevation: 0),
-        textTheme: GoogleFonts.plusJakartaSansTextTheme(
-          Theme.of(context).textTheme,
-        ),
-        appBarTheme: AppBarTheme(
-          color: Colors.white,
-          elevation: 0,
-          titleTextStyle: GoogleFonts.plusJakartaSans(
-            color: AppColors.primary,
-            fontSize: 18,
-            fontWeight: FontWeight.w500,
+    return BlocProvider(
+      create: (context) => AuthBloc(AuthRemoteDatasource()),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primary),
+          dialogTheme: DialogThemeData(elevation: 0),
+          textTheme: GoogleFonts.plusJakartaSansTextTheme(
+            Theme.of(context).textTheme,
           ),
-          iconTheme: IconThemeData(color: AppColors.black),
-          centerTitle: true,
+          appBarTheme: AppBarTheme(
+            color: Colors.white,
+            elevation: 0,
+            titleTextStyle: GoogleFonts.plusJakartaSans(
+              color: AppColors.primary,
+              fontSize: 10,
+              fontWeight: FontWeight.w500,
+            ),
+            iconTheme: IconThemeData(color: AppColors.black),
+            centerTitle: true,
+          ),
         ),
+        home: const SplashScreen(),
       ),
-      home: SplashScreen(),
     );
   }
 }

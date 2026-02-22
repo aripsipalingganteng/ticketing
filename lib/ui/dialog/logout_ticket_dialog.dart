@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:ticketing/core/components/button.dart';
-import 'package:ticketing/core/components/space.dart';
-import 'package:ticketing/core/constants/color.dart';
+import 'package:ticketing_apps/core/components/button.dart';
+import 'package:ticketing_apps/core/components/space.dart';
+import 'package:ticketing_apps/core/constants/color.dart';
+import 'package:ticketing_apps/core/extensions/build_context_ext.dart';
+import 'package:ticketing_apps/data/local_datasource/auth_local_datasource.dart';
+import 'package:ticketing_apps/ui/auth/splash_screen.dart';
 
 class LogoutTicketDialog extends StatefulWidget {
   const LogoutTicketDialog({super.key});
@@ -19,13 +22,13 @@ class _LogoutTicketDialogState extends State<LogoutTicketDialog> {
         children: [
           Text(
             'Logout',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
           ),
           SpaceHeight(12),
           Text(
             'Apakah anda yakin ingin logout?',
             style: TextStyle(
-              fontSize: 12,
+              fontSize: 18,
               color: AppColors.black.withOpacity(65 / 100),
             ),
             textAlign: TextAlign.center,
@@ -44,13 +47,16 @@ class _LogoutTicketDialogState extends State<LogoutTicketDialog> {
                   textColor: AppColors.grey,
                 ),
               ),
+              SpaceWidth(8),
               Flexible(
-                child: Button
-                .filled(
-                  onPressed: () {},
+                child: Button.filled(
                   borderRadius: 8,
                   height: 44,
                   fontSize: 14,
+                  onPressed: () async {
+                    await AuthLocalDatasource().removeAuthData();
+                    context.pushReplacement(SplashScreen());
+                  },
                   label: 'Logout',
                 ),
               ),

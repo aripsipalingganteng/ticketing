@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:ticketing_apps/core/constants/color.dart';
 
-import '../constants/color.dart';
 
 enum ButtonStyleType { filled, outlined }
 

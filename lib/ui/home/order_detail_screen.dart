@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:ticketing/core/components/button.dart';
-import 'package:ticketing/core/components/space.dart';
-import 'package:ticketing/core/constants/color.dart';
-import 'package:ticketing/core/extensions/idr_currency.dart';
-import 'package:ticketing/core/widgets/payment_method_button.dart';
-import 'package:ticketing/gen/assets/assets.gen.dart';
-import 'package:ticketing/ui/dialog/payment_qris_dialog.dart';
-import 'package:ticketing/ui/dialog/payment_tunai_dialog.dart';
-import 'package:ticketing/ui/home/model/product_model.dart';
+import 'package:ticketing_apps/core/assets/assets.gen.dart';
+import 'package:ticketing_apps/core/components/button.dart';
+import 'package:ticketing_apps/core/components/space.dart';
+import 'package:ticketing_apps/core/constants/color.dart';
+import 'package:ticketing_apps/core/extensions/idr_currency.dart';
+import 'package:ticketing_apps/core/widgets/payment_method_button.dart';
+import 'package:ticketing_apps/ui/dialog/payment_qris_dialog.dart';
+import 'package:ticketing_apps/ui/dialog/payment_tunai_dialog.dart';
+import 'package:ticketing_apps/ui/home/model/product_model.dart';
 
 class OrderDetailScreen extends StatelessWidget {
   final List<ProductModel> products;
@@ -28,14 +28,16 @@ class OrderDetailScreen extends StatelessWidget {
         ),
       ),
       body: ListView.separated(
+        padding: EdgeInsets.symmetric(horizontal: 20),
         itemBuilder: (context, index) {
           final item = products[index];
           return Container(
             padding: EdgeInsets.all(24),
             decoration: BoxDecoration(
               border: Border.all(color: AppColors.stroke),
-              borderRadius: BorderRadius.circular(46),
+              borderRadius: BorderRadius.circular(24),
             ),
+
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -108,7 +110,7 @@ class OrderDetailScreen extends StatelessWidget {
                     Expanded(
                       child: PaymentMethodButton(
                         iconPath: Assets.icons.payment.transfer.path,
-                        label: 'Transfer',
+                        label: 'Transfer Uang',
                         isActive: paymentButtonIndex == 2,
                         onPressed: () => setState(() => paymentButtonIndex = 2),
                       ),
@@ -135,11 +137,12 @@ class OrderDetailScreen extends StatelessWidget {
             child: Row(
               children: [
                 Expanded(
+                  flex: 1,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'order summary',
+                        'Order Summary',
                         style: TextStyle(
                           fontWeight: FontWeight.w500,
                           fontSize: 16,
@@ -150,7 +153,7 @@ class OrderDetailScreen extends StatelessWidget {
                         2000000.currencyFormatRp,
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          fontSize: 16,
+                          fontSize: 18,
                         ),
                       ),
                     ],
@@ -168,13 +171,13 @@ class OrderDetailScreen extends StatelessWidget {
                       }
                       if (paymentButtonIndex == 1) {
                         showDialog(
-                          context: context, 
+                          context: context,
                           builder: (context) =>
-                              PaymentTunaiDialog(totalPrice: 20000000),    
-                          );
+                              PaymentTunaiDialog(totalPrice: 2000000),
+                        );
                       }
                     },
-                    label: 'process',
+                    label: 'Process',
                     borderRadius: 20,
                   ),
                 ),
